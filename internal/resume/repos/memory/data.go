@@ -1,6 +1,12 @@
-package resume
+package memory
 
-var ResumeMock = Resume{
+import (
+	"time"
+
+	"github.com/mickey-krasilnikov/resume-api-go/internal/resume/models"
+)
+
+var ResumeMock = models.Resume{
 	FirstName: "Mikhail",
 	LastName:  "Krasilnikov",
 	Title:     "Lead Software Engineer",
@@ -17,13 +23,13 @@ var ResumeMock = Resume{
 		"Experienced as a Team Leader",
 		"Involved in full Software Development Life Cycle (SDLC)",
 	},
-	Skills: []SkillGroup{
+	Skills: []models.SkillGroup{
 		{
 			Name: "Programming Languages",
-			SubGroups: []SkillGroup{
+			SubGroups: []models.SkillGroup{
 				{
 					Name: "Backend",
-					Skills: []Skill{
+					Skills: []models.Skill{
 						{
 							Name:           "C#",
 							AdditionalInfo: ".Net Core, .Net",
@@ -33,18 +39,18 @@ var ResumeMock = Resume{
 							AdditionalInfo: "Gin",
 						},
 						{
-							Name:           "Python",
-							AdditionalInfo: "FastAPI",
-						},
-						{
 							Name:           "Javascript",
 							AdditionalInfo: "Node.js",
+						},
+						{
+							Name:           "Python",
+							AdditionalInfo: "FastAPI",
 						},
 					},
 				},
 				{
 					Name: "Frontend",
-					Skills: []Skill{
+					Skills: []models.Skill{
 						{
 							Name:           "TypeScript",
 							AdditionalInfo: "Angular, Vue.js",
@@ -62,7 +68,7 @@ var ResumeMock = Resume{
 				},
 				{
 					Name: "Database",
-					Skills: []Skill{
+					Skills: []models.Skill{
 						{
 							Name:           "T-SQL",
 							AdditionalInfo: "MS SQL",
@@ -81,10 +87,10 @@ var ResumeMock = Resume{
 		},
 		{
 			Name: "Databases",
-			SubGroups: []SkillGroup{
+			SubGroups: []models.SkillGroup{
 				{
 					Name: "SQL",
-					Skills: []Skill{
+					Skills: []models.Skill{
 						{
 							Name: "MS SQL",
 						},
@@ -101,7 +107,7 @@ var ResumeMock = Resume{
 				},
 				{
 					Name: "NoSQL",
-					Skills: []Skill{
+					Skills: []models.Skill{
 						{
 							Name: "MongoDB",
 						},
@@ -123,7 +129,7 @@ var ResumeMock = Resume{
 		},
 		{
 			Name: "Container Services",
-			Skills: []Skill{
+			Skills: []models.Skill{
 				{
 					Name: "Docker",
 				},
@@ -137,7 +143,7 @@ var ResumeMock = Resume{
 		},
 		{
 			Name: "CI/CD",
-			Skills: []Skill{
+			Skills: []models.Skill{
 				{
 					Name: "Azure DevOps",
 				},
@@ -160,7 +166,7 @@ var ResumeMock = Resume{
 		},
 		{
 			Name: "Bug Tracking",
-			Skills: []Skill{
+			Skills: []models.Skill{
 				{
 					Name: "JIRA",
 				},
@@ -171,7 +177,7 @@ var ResumeMock = Resume{
 		},
 		{
 			Name: "Source Control",
-			Skills: []Skill{
+			Skills: []models.Skill{
 				{
 					Name: "GIT",
 				},
@@ -182,7 +188,7 @@ var ResumeMock = Resume{
 		},
 		{
 			Name: "OS",
-			Skills: []Skill{
+			Skills: []models.Skill{
 				{
 					Name: "Windows",
 				},
@@ -199,7 +205,7 @@ var ResumeMock = Resume{
 		},
 		{
 			Name: "Clouds",
-			Skills: []Skill{
+			Skills: []models.Skill{
 				{
 					Name: "Azure",
 				},
@@ -210,13 +216,13 @@ var ResumeMock = Resume{
 					Name: "AWS",
 				},
 			},
-			SubGroups: []SkillGroup{
+			SubGroups: []models.SkillGroup{
 				{
 					Name: "Compute",
-					SubGroups: []SkillGroup{
+					SubGroups: []models.SkillGroup{
 						{
 							Name: "IaaS",
-							Skills: []Skill{
+							Skills: []models.Skill{
 								{
 									Name: "Azure VM",
 								},
@@ -236,7 +242,7 @@ var ResumeMock = Resume{
 						},
 						{
 							Name: "PaaS",
-							Skills: []Skill{
+							Skills: []models.Skill{
 								{
 									Name: "Azure App Service",
 								},
@@ -259,7 +265,7 @@ var ResumeMock = Resume{
 						},
 						{
 							Name: "Serverless",
-							Skills: []Skill{
+							Skills: []models.Skill{
 								{
 									Name: "Azure Functions",
 								},
@@ -287,10 +293,10 @@ var ResumeMock = Resume{
 				},
 				{
 					Name: "Storage",
-					SubGroups: []SkillGroup{
+					SubGroups: []models.SkillGroup{
 						{
 							Name: "RDS",
-							Skills: []Skill{
+							Skills: []models.Skill{
 								{
 									Name: "Azure SQL",
 								},
@@ -304,7 +310,7 @@ var ResumeMock = Resume{
 						},
 						{
 							Name: "NoSQL",
-							Skills: []Skill{
+							Skills: []models.Skill{
 								{
 									Name: "Azure CosmosDB",
 								},
@@ -321,7 +327,7 @@ var ResumeMock = Resume{
 						},
 						{
 							Name: "Object",
-							Skills: []Skill{
+							Skills: []models.Skill{
 								{
 									Name: "Azure Blob Storage",
 								},
@@ -335,7 +341,7 @@ var ResumeMock = Resume{
 						},
 						{
 							Name: "File",
-							Skills: []Skill{
+							Skills: []models.Skill{
 								{
 									Name: "Azure File Storage",
 								},
@@ -349,7 +355,7 @@ var ResumeMock = Resume{
 						},
 						{
 							Name: "Archive",
-							Skills: []Skill{
+							Skills: []models.Skill{
 								{
 									Name: "Azure Archive Storage",
 								},
@@ -365,7 +371,7 @@ var ResumeMock = Resume{
 				},
 				{
 					Name: "Messaging",
-					Skills: []Skill{
+					Skills: []models.Skill{
 						{
 							Name: "Azure Service Bus",
 						},
@@ -388,7 +394,7 @@ var ResumeMock = Resume{
 				},
 				{
 					Name: "Secret Management",
-					Skills: []Skill{
+					Skills: []models.Skill{
 						{
 							Name: "Azure KeyVault",
 						},
@@ -408,7 +414,7 @@ var ResumeMock = Resume{
 				},
 				{
 					Name: "Monitoring and Logging",
-					Skills: []Skill{
+					Skills: []models.Skill{
 						{
 							Name: "Azure Monitor",
 						},
@@ -425,10 +431,10 @@ var ResumeMock = Resume{
 				},
 				{
 					Name: "Networking",
-					SubGroups: []SkillGroup{
+					SubGroups: []models.SkillGroup{
 						{
 							Name: "Virtual Network",
-							Skills: []Skill{
+							Skills: []models.Skill{
 								{
 									Name: "Azure VNET",
 								},
@@ -442,7 +448,7 @@ var ResumeMock = Resume{
 						},
 						{
 							Name: "Load Balancing",
-							Skills: []Skill{
+							Skills: []models.Skill{
 								{
 									Name: "Azure Load Balancer",
 								},
@@ -459,7 +465,7 @@ var ResumeMock = Resume{
 						},
 						{
 							Name: "Firewall",
-							Skills: []Skill{
+							Skills: []models.Skill{
 								{
 									Name: "Azure WAF",
 								},
@@ -473,7 +479,7 @@ var ResumeMock = Resume{
 						},
 						{
 							Name: "DNS",
-							Skills: []Skill{
+							Skills: []models.Skill{
 								{
 									Name: "Azure DNS",
 								},
@@ -487,7 +493,7 @@ var ResumeMock = Resume{
 						},
 						{
 							Name: "CDN",
-							Skills: []Skill{
+							Skills: []models.Skill{
 								{
 									Name: "Azure CDN",
 								},
@@ -501,7 +507,7 @@ var ResumeMock = Resume{
 						},
 						{
 							Name: "Gateways",
-							Skills: []Skill{
+							Skills: []models.Skill{
 								{
 									Name: "Azure API Gateway",
 								},
@@ -523,7 +529,7 @@ var ResumeMock = Resume{
 				},
 				{
 					Name: "DevOps",
-					Skills: []Skill{
+					Skills: []models.Skill{
 						{
 							Name:           "Azure DevOps",
 							AdditionalInfo: "Boards, Pipelines, Repos, TestPlans, Artifacts",
@@ -541,7 +547,50 @@ var ResumeMock = Resume{
 			},
 		},
 	},
-	Experience:     []Experience{},
-	Certifications: []Certification{},
-	Education:      []Education{},
+	Experience: []models.Experience{},
+	Certifications: []models.Certification{
+		{
+			ID:              0,
+			Name:            "Azure Solutions Architect Expert",
+			Issuer:          "Microsoft",
+			IssueDate:       time.Date(2020, time.June, 10, 0, 0, 0, 0, time.UTC),
+			ExpirationDate:  time.Date(2023, time.June, 10, 0, 0, 0, 0, time.UTC),
+			VerificationURL: "https://www.credly.com/badges/42f9be70-0b40-4bb0-8256-bd9d573e36af/public_url",
+		},
+		{
+			ID:              1,
+			Name:            "Professional Cloud Architect",
+			Issuer:          "Google",
+			IssueDate:       time.Date(2020, time.October, 27, 0, 0, 0, 0, time.UTC),
+			ExpirationDate:  time.Date(2022, time.October, 27, 0, 0, 0, 0, time.UTC),
+			VerificationURL: "https://www.credential.net/786961ad-0225-4bb0-883a-3c2feceb5174",
+		},
+		{
+			ID:              2,
+			Name:            "AWS Certified Solutions Architect Associate",
+			Issuer:          "Amazon",
+			IssueDate:       time.Date(2021, time.April, 28, 0, 0, 0, 0, time.UTC),
+			ExpirationDate:  time.Date(2024, time.April, 28, 0, 0, 0, 0, time.UTC),
+			VerificationURL: "https://www.credly.com/badges/dc95ff2a-12d8-4816-91b2-a9292ae5df85/public_url",
+		},
+		{
+			ID:              3,
+			Name:            "DevOps Engineer Expert",
+			Issuer:          "Microsoft",
+			IssueDate:       time.Date(2020, time.December, 10, 0, 0, 0, 0, time.UTC),
+			ExpirationDate:  time.Date(2022, time.December, 10, 0, 0, 0, 0, time.UTC),
+			VerificationURL: "https://www.credly.com/badges/2d29613e-7c7e-481d-aba3-842b409fecd7/public_url",
+		},
+	},
+	Education: []models.Education{
+		{
+			ID:           0,
+			Name:         "Penza State University",
+			Degree:       "Bachelor's degree",
+			FieldOfStudy: "Design and technology of radio electronic devices",
+			StartDate:    time.Date(2006, time.September, 1, 0, 0, 0, 0, time.UTC),
+			EndDate:      time.Date(2013, time.June, 19, 0, 0, 0, 0, time.UTC),
+			URL:          "https://international.pnzgu.ru/",
+		},
+	},
 }

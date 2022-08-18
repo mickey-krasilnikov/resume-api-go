@@ -1,48 +1,48 @@
 package main
 
 import (
+	"context"
+	"fmt"
 	"net/http"
 	"os"
 
 	"github.com/gin-contrib/gzip"
 	"github.com/gin-gonic/gin"
-	"github.com/mickey-krasilnikov/resume-api-go/resume"
+
+	"github.com/mickey-krasilnikov/resume-api-go/internal/resume/repos"
 )
 
 func main() {
+	repo, err := repos.GetRepo(repos.InMemory)
+	if err != nil {
+		panic(fmt.Sprintf("unable to create repo. application crashed with an error:\n%s", err))
+	}
 	if os.Getenv("PORT") == "" {
 		os.Setenv("PORT", "8081")
 	}
 	r := gin.Default()
 	r.Use(gzip.Gzip(gzip.DefaultCompression))
-	registerRoutes(r)
+	registerRoutes(r, repo)
 	r.Run()
 }
 
-func registerRoutes(r *gin.Engine) {
+func registerRoutes(r *gin.Engine, repo repos.ResumeRepo) {
 	g := r.Group("/api")
-	g.GET("/", func(c *gin.Context) {
-		c.Redirect(http.StatusTemporaryRedirect, "/api/resume")
+	g.GET("/", func(ctx *gin.Context) {
+		ctx.Redirect(http.StatusTemporaryRedirect, "/api/resume")
 	})
 	g.GET("/resume", func(ctx *gin.Context) {
-		ctx.JSON(http.StatusOK, resume.ResumeMock)
-	})
-	g.GET("/resume/contacts", func(ctx *gin.Context) {
-		ctx.JSON(http.StatusOK, resume.ResumeMock.Contacts)
-	})
-	g.GET("/resume/summary", func(ctx *gin.Context) {
-		ctx.JSON(http.StatusOK, resume.ResumeMock.Summary)
-	})
-	g.GET("/resume/skills", func(ctx *gin.Context) {
-		ctx.JSON(http.StatusOK, resume.ResumeMock.Skills)
-	})
-	g.GET("/resume/experience", func(ctx *gin.Context) {
-		ctx.JSON(http.StatusOK, resume.ResumeMock.Experience)
-	})
-	g.GET("/resume/certifications", func(ctx *gin.Context) {
-		ctx.JSON(http.StatusOK, resume.ResumeMock.Certifications)
-	})
-	g.GET("/resume/education", func(ctx *gin.Context) {
-		ctx.JSON(http.StatusOK, resume.ResumeMock.Education)
+		resume, err := repo.GetResume(context.Background())
+		if err != nil {
+			err := &gin.Error{
+				Err:  err,
+				Type: gin.ErrorTypeRender,
+				Meta: "error while getting resume from repo",
+			}
+			ctx.Error(err)
+		} else {
+			ctx.JSON(http.StatusOK, resume)
+			return
+		}
 	})
 }
