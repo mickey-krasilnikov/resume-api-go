@@ -1,0 +1,539 @@
+{
+  "firstName": "Mikhail",
+  "lastName": "Krasilnikov",
+  "title": "Lead Software Engineer",
+  "contacts": {
+    "Accredible": "https://www.credential.net/profile/mikhailkrasilnikov328966/wallet",
+    "Credly": "https://www.credly.com/users/mickey-krasilnikov/badges",
+    "Email": "mickey.krasilnikov@gmail.com",
+    "LinkedIn": "https://www.linkedin.com/in/mickeykrasilnikov/",
+    "Location": "Sunnyvale, CA, 94085",
+    "Phone": "+1(408)480-3600"
+  },
+  "summary": [
+    "12+ years of professional programming experience with consistently increasing responsibilities in the design and development of commercial applications on different platforms and environments",
+    "Certified Cloud Solution Architect (Azure, GCP, AWS)",
+    "Experienced as a Team Leader",
+    "Involved in full Software Development Life Cycle (SDLC)"
+  ],
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "subGroups": [
+        {
+          "name": "Backend",
+          "skills": [
+            { "name": "C#", "additionalInfo": ".Net Core, .Net" },
+            { "name": "GoLang", "additionalInfo": "Gin" },
+            { "name": "Javascript", "additionalInfo": "Node.js" },
+            { "name": "Python", "additionalInfo": "FastAPI" }
+          ]
+        },
+        {
+          "name": "Frontend",
+          "skills": [
+            { "name": "TypeScript", "additionalInfo": "Angular, Vue.js" },
+            { "name": "Javascript" },
+            { "name": "HTML" },
+            { "name": "CSS" }
+          ]
+        },
+        {
+          "name": "Database",
+          "skills": [
+            { "name": "T-SQL", "additionalInfo": "MS SQL" },
+            { "name": "SQL/PSM", "additionalInfo": "MySQL" },
+            { "name": "PL-SQL", "additionalInfo": "PostgreSQL, Oracle" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Databases",
+      "subGroups": [
+        {
+          "name": "SQL",
+          "skills": [
+            { "name": "MS SQL" },
+            { "name": "MySQL" },
+            { "name": "PostgreSQL" },
+            { "name": "Oracle" }
+          ]
+        },
+        {
+          "name": "NoSQL",
+          "skills": [
+            { "name": "MongoDB" },
+            { "name": "Redis" },
+            { "name": "CosmosDB" },
+            { "name": "DynamoDB" },
+            { "name": "BigTable" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Container Services",
+      "skills": [
+        { "name": "Docker" },
+        { "name": "Docker Swarm" },
+        { "name": "Kubernetes" }
+      ]
+    },
+    {
+      "name": "CI/CD",
+      "skills": [
+        { "name": "Azure DevOps" },
+        { "name": "GitHub Actions" },
+        { "name": "AWS CodePipeline" },
+        { "name": "Octopus" },
+        { "name": "Jenkins" },
+        { "name": "TeamCity" }
+      ]
+    },
+    {
+      "name": "Bug Tracking",
+      "skills": [{ "name": "JIRA" }, { "name": "Azure DevOps" }]
+    },
+    {
+      "name": "Source Control",
+      "skills": [{ "name": "GIT" }, { "name": "SVN" }]
+    },
+    {
+      "name": "OS",
+      "skills": [
+        { "name": "Windows" },
+        { "name": "MacOS" },
+        { "name": "Ubuntu" },
+        { "name": "Debian" }
+      ]
+    },
+    {
+      "name": "Clouds",
+      "subGroups": [
+        {
+          "name": "Compute",
+          "subGroups": [
+            {
+              "name": "IaaS",
+              "skills": [
+                { "name": "Azure VM" },
+                { "name": "Google Compute Engine" },
+                { "name": "AWS EC2" },
+                { "name": "Azure Container Instance" },
+                { "name": "AWS ECS" }
+              ]
+            },
+            {
+              "name": "PaaS",
+              "skills": [
+                { "name": "Azure App Service" },
+                { "name": "Google App Engine" },
+                { "name": "AWS Beanstalk" },
+                { "name": "Azure AKS" },
+                { "name": "Google Kubernetes Service" },
+                { "name": "AWS EKS" }
+              ]
+            },
+            {
+              "name": "Serverless",
+              "skills": [
+                { "name": "Azure Functions" },
+                { "name": "Azure Logic Apps" },
+                { "name": "Google Cloud Functions" },
+                { "name": "Google Workflows" },
+                { "name": "AWS Lambda" },
+                { "name": "AWS Step Functions" },
+                { "name": "AWS Fargate" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Storage",
+          "subGroups": [
+            {
+              "name": "RDS",
+              "skills": [
+                { "name": "Azure SQL" },
+                { "name": "Google Cloud SQL" },
+                { "name": "AWS RDS" }
+              ]
+            },
+            {
+              "name": "NoSQL",
+              "skills": [
+                { "name": "Azure CosmosDB" },
+                { "name": "Azure Table Storage" },
+                { "name": "Google BigTable" },
+                { "name": "AWS DynamoDB" }
+              ]
+            },
+            {
+              "name": "Object",
+              "skills": [
+                { "name": "Azure Blob Storage" },
+                { "name": "Google Cloud Storage" },
+                { "name": "AWS S3" }
+              ]
+            },
+            {
+              "name": "File",
+              "skills": [
+                { "name": "Azure File Storage" },
+                { "name": "Google Filestore" },
+                { "name": "AWS EFS" }
+              ]
+            },
+            {
+              "name": "Archive",
+              "skills": [
+                { "name": "Azure Archive Storage" },
+                { "name": "Google Archive Storage" },
+                { "name": "Amazon S3 Glacier" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Messaging",
+          "skills": [
+            { "name": "Azure Service Bus" },
+            { "name": "Azure Queue Storage" },
+            { "name": "Azure Notification Hub" },
+            { "name": "Google Pub/Sub" },
+            { "name": "AWS SQS" },
+            { "name": "AWS SNS" }
+          ]
+        },
+        {
+          "name": "Secret Management",
+          "skills": [
+            { "name": "Azure KeyVault" },
+            { "name": "Google Secret Manager" },
+            { "name": "Google Cloud KMS" },
+            { "name": "AWS Secrets Manager" },
+            { "name": "AWS KMS" }
+          ]
+        },
+        {
+          "name": "Monitoring and Logging",
+          "skills": [
+            { "name": "Azure Monitor" },
+            { "name": "Google Cloud Logging" },
+            { "name": "Google Cloud Monitoring" },
+            { "name": "AWS CloudWatch" }
+          ]
+        },
+        {
+          "name": "Networking",
+          "subGroups": [
+            {
+              "name": "Virtual Network",
+              "skills": [
+                { "name": "Azure VNET" },
+                { "name": "Google VPC" },
+                { "name": "AWS VPC" }
+              ]
+            },
+            {
+              "name": "Load Balancing",
+              "skills": [
+                { "name": "Azure Load Balancer" },
+                { "name": "Azure Traffic Manager" },
+                { "name": "Google Cloud Load Balancing" },
+                { "name": "AWS ELB" }
+              ]
+            },
+            {
+              "name": "Firewall",
+              "skills": [
+                { "name": "Azure WAF" },
+                { "name": "Google Cloud Firewalls" },
+                { "name": "AWS WAF" }
+              ]
+            },
+            {
+              "name": "DNS",
+              "skills": [
+                { "name": "Azure DNS" },
+                { "name": "Google Cloud DNS" },
+                { "name": "AWS Route 53" }
+              ]
+            },
+            {
+              "name": "CDN",
+              "skills": [
+                { "name": "Azure CDN" },
+                { "name": "Google Cloud CDN" },
+                { "name": "AWS CloudFront" }
+              ]
+            },
+            {
+              "name": "Gateways",
+              "skills": [
+                { "name": "Azure API Gateway" },
+                { "name": "Azure API Management" },
+                { "name": "Azure Frontdoor" },
+                { "name": "Google API Management" },
+                { "name": "AWS API Gateway" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "DevOps",
+          "skills": [
+            {
+              "name": "Azure DevOps",
+              "additionalInfo": "Boards, Pipelines, Repos, TestPlans, Artifacts"
+            },
+            {
+              "name": "GCP DevOps",
+              "additionalInfo": "Cloud Build, Artifact Registry"
+            },
+            {
+              "name": "AWS DevOps",
+              "additionalInfo": "CodePipeline, CodeBuild, CodeDeploy, CodeStar"
+            }
+          ]
+        }
+      ],
+      "skills": [{ "name": "Azure" }, { "name": "GCP" }, { "name": "AWS" }]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Lead Software Engineer",
+      "company": "EPAM Systems",
+      "startDate": "2019-05-01T00:00:00Z",
+      "endDate": "0001-01-01T00:00:00Z",
+      "projects": [
+        {
+          "client": "Broadridge",
+          "startDate": "2021-11-01T00:00:00Z",
+          "endDate": "0001-01-01T00:00:00Z",
+          "projectRoles": ["Key Developer", "Team Lead"],
+          "envirnment": [
+            ".NET Core 6.0",
+            "Vue.js",
+            "Python 3.7",
+            "AWS",
+            "AWS Lambda",
+            "AWS S3",
+            "AWS Beanstalk",
+            "AWS EC2",
+            "AWS Code Commit",
+            "AWS Code Build",
+            "AWS Code Deploy",
+            "AWS Code Pipeline",
+            "Docker",
+            "AWS RDS",
+            "GIT"
+          ]
+        },
+        {
+          "client": "ElipsLife",
+          "startDate": "2019-05-01T00:00:00Z",
+          "endDate": "2021-11-01T00:00:00Z",
+          "projectRoles": ["Key Developer", "Team Lead"],
+          "envirnment": [
+            ".NET Core 6.0",
+            "Angular 13",
+            "Go Lang",
+            "Azure",
+            "Azure DevOps",
+            "Octopus",
+            "OKTA",
+            "Docker",
+            "Cosmos DB",
+            "Redis",
+            "MS SQL",
+            "GIT"
+          ],
+          "taskPerformed": [
+            "Designed microservice-based hybrid-cloud solution architecture for multi-role self-service portal for managing insurance claims, underwriting, and broker reports.",
+            "Designed and developed microservices following a RESTful approach and applying best practices. • Covered code with unit and contract tests and maintained code coverage on 80%.",
+            "Configured CI/CD pipelines and established automated quality gates on different stages.",
+            "Mentored new joiners and supported them during the ramp-up period.",
+            "Performed systematic knowledge transfer to the client support team, including the creation of visual documentation. • Introduced and ensured the development team follows the very best engineering practices (with respect to various limitations on the client side)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Front Office Risk System Developer (AVP) (Senior Software Engineer)",
+      "company": "Credit Suisse",
+      "startDate": "2015-09-01T00:00:00Z",
+      "endDate": "2019-04-01T00:00:00Z",
+      "projects": [
+        {
+          "startDate": "0001-01-01T00:00:00Z",
+          "endDate": "0001-01-01T00:00:00Z",
+          "projectRoles": ["Key Developer", "Tech Lead"],
+          "envirnment": [
+            ".NET Core 2.1",
+            ".NET 4.6",
+            "WPF",
+            "WCF",
+            "EF",
+            "MS SQL",
+            "MS SSAS",
+            "TeamCity",
+            "Jira",
+            "Confluence",
+            "Splunk",
+            "GIT"
+          ],
+          "taskPerformed": [
+            "Maintained Risk Management System for Credit Suisse Front Office and developed new modules. • Improved performance and decreased memory usage in CS in-house distributed cache.",
+            "Splatted monolith server-side architecture to microservices.",
+            "Analyzed and arranged requirements with traders, BAU team and QA.",
+            "Supported worldwide users as a part of the SL3 team. • Administrated CI/CD on TeamCity.",
+            "Documented design decisions and usage examples.",
+            "Mentored new joiners."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Senior Software Engineer",
+      "company": "SINTEGRO SOFT",
+      "startDate": "2014-09-01T00:00:00Z",
+      "endDate": "2015-09-01T00:00:00Z",
+      "projects": [
+        {
+          "client": "Yandex",
+          "startDate": "0001-01-01T00:00:00Z",
+          "endDate": "0001-01-01T00:00:00Z",
+          "projectRoles": ["Key Developer"],
+          "envirnment": [
+            ".NET 4.5",
+            "ASP.NET MVC 5",
+            "ASP.NET Web API",
+            "WPF",
+            "MS SQL",
+            "EF",
+            "TFS",
+            "WIX",
+            "GIT"
+          ],
+          "taskPerformed": [
+            "Participated in the development of the system that helps organize corporate bonuses, such as meals, mobile phones, fitness, transportation, etc.",
+            "Developed user personal page that contains account balance and transaction history. ",
+            "Developed desktop administration systems for corporate bonus managers.",
+            "Documented design decisions, component APIs and usage examples.",
+            "Participated in the software integration process."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Gollard",
+      "startDate": "2013-07-01T00:00:00Z",
+      "endDate": "2014-08-01T00:00:00Z",
+      "projects": [
+        {
+          "startDate": "0001-01-01T00:00:00Z",
+          "endDate": "0001-01-01T00:00:00Z",
+          "projectRoles": ["Key Developer"],
+          "envirnment": [
+            ".NET 4.5",
+            "WPF",
+            "WCF",
+            "ASP.NET Web API",
+            "Esri ArcGIS",
+            "MS SQL",
+            "MySQL",
+            "GitLab",
+            "WIX",
+            "GIT"
+          ],
+          "taskPerformed": [
+            "Participated in the development of desktop GIS application for the power distribution company dealing with electrical grids, stations and facilities on the map.",
+            "Implemented a feature that allows monitoring the service transport on the map in real-time",
+            "Introduced the possibility to view video streams from the cameras marked on the map.",
+            "Participated in the development of the solution to maintain security and safety of the buildings and areas using cameras and different types of sensors.",
+            "Implemented an alerting system that works based on the biometric data from the cameras or events from the sensors."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Software Engineer",
+      "company": "SGC",
+      "startDate": "2012-08-01T00:00:00Z",
+      "endDate": "2013-07-01T00:00:00Z",
+      "projects": [
+        {
+          "startDate": "0001-01-01T00:00:00Z",
+          "endDate": "0001-01-01T00:00:00Z",
+          "projectRoles": ["Key Developer"],
+          "envirnment": [".NET 4.0", "WPF", "SOAP", "MS SQL", "WIX", "SVN"],
+          "taskPerformed": [
+            "Developed software for composing estimates to determine the cost of construction.",
+            "Integrated with other well-known systems available on the market for composing estimates."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Research and Production Center 'Start'",
+      "startDate": "2010-09-01T00:00:00Z",
+      "endDate": "2012-07-01T00:00:00Z",
+      "projects": [
+        {
+          "startDate": "0001-01-01T00:00:00Z",
+          "endDate": "0001-01-01T00:00:00Z",
+          "projectRoles": ["Key Developer"],
+          "envirnment": [".NET 3.5", "WinForms", "SOAP", "MS SQL", "SVN"],
+          "taskPerformed": [
+            "Developed software for designing micro boards and creating a mask for interacting with third-party equipment for printing this kind of product."
+          ]
+        }
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Azure Solutions Architect Expert",
+      "issuer": "Microsoft",
+      "issueDate": "2020-06-10T00:00:00Z",
+      "expirationDate": "2023-06-10T00:00:00Z",
+      "verificationURL": "https://www.credly.com/badges/42f9be70-0b40-4bb0-8256-bd9d573e36af/public_url"
+    },
+    {
+      "name": "Professional Cloud Architect",
+      "issuer": "Google",
+      "issueDate": "2020-10-27T00:00:00Z",
+      "expirationDate": "2022-10-27T00:00:00Z",
+      "verificationURL": "https://www.credential.net/786961ad-0225-4bb0-883a-3c2feceb5174"
+    },
+    {
+      "name": "AWS Certified Solutions Architect Associate",
+      "issuer": "Amazon",
+      "issueDate": "2021-04-28T00:00:00Z",
+      "expirationDate": "2024-04-28T00:00:00Z",
+      "verificationURL": "https://www.credly.com/badges/dc95ff2a-12d8-4816-91b2-a9292ae5df85/public_url"
+    },
+    {
+      "name": "DevOps Engineer Expert",
+      "issuer": "Microsoft",
+      "issueDate": "2020-12-10T00:00:00Z",
+      "expirationDate": "2022-12-10T00:00:00Z",
+      "verificationURL": "https://www.credly.com/badges/2d29613e-7c7e-481d-aba3-842b409fecd7/public_url"
+    }
+  ],
+  "education": [
+    {
+      "name": "Penza State University",
+      "degree": "Bachelor's degree",
+      "fieldOfStudy": "Design and technology of radio electronic devices",
+      "startDate": "2006-09-01T00:00:00Z",
+      "endDate": "2013-06-19T00:00:00Z",
+      "url": "https://international.pnzgu.ru/"
+    }
+  ]
+}

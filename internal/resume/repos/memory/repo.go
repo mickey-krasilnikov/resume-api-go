@@ -1,19 +1,23 @@
 package memory
 
 import (
-	"context"
-
 	"github.com/mickey-krasilnikov/resume-api-go/internal/resume/models"
 )
 
 type InMemoryResumeRepo struct {
-	resume *models.Resume
+	resumes []models.Resume
 }
 
-func New() (*InMemoryResumeRepo, error) {
-	return &InMemoryResumeRepo{resume: &ResumeMock}, nil
+func New() *InMemoryResumeRepo {
+	return &InMemoryResumeRepo{resumes: []models.Resume{models.ResumeMock}}
 }
 
-func (r *InMemoryResumeRepo) GetResume(ctx context.Context) (*models.Resume, error) {
-	return r.resume, nil
+func (repo *InMemoryResumeRepo) ListResumes() ([]models.Resume, error) {
+	resumes := []models.Resume{models.ResumeMock}
+	return resumes, nil
+}
+
+func (repo *InMemoryResumeRepo) CreateResume(resume models.Resume) error {
+	repo.resumes = append(repo.resumes, resume)
+	return nil
 }

@@ -1,12 +1,10 @@
-package memory
+package models
 
 import (
 	"time"
-
-	"github.com/mickey-krasilnikov/resume-api-go/internal/resume/models"
 )
 
-var ResumeMock = models.Resume{
+var ResumeMock = Resume{
 	FirstName: "Mikhail",
 	LastName:  "Krasilnikov",
 	Title:     "Lead Software Engineer",
@@ -23,13 +21,13 @@ var ResumeMock = models.Resume{
 		"Experienced as a Team Leader",
 		"Involved in full Software Development Life Cycle (SDLC)",
 	},
-	Skills: []models.SkillGroup{
+	Skills: []SkillGroup{
 		{
 			Name: "Programming Languages",
-			SubGroups: []models.SkillGroup{
+			SubGroups: []SkillGroup{
 				{
 					Name: "Backend",
-					Skills: []models.Skill{
+					Skills: []Skill{
 						{
 							Name:           "C#",
 							AdditionalInfo: ".Net Core, .Net",
@@ -50,7 +48,7 @@ var ResumeMock = models.Resume{
 				},
 				{
 					Name: "Frontend",
-					Skills: []models.Skill{
+					Skills: []Skill{
 						{
 							Name:           "TypeScript",
 							AdditionalInfo: "Angular, Vue.js",
@@ -68,7 +66,7 @@ var ResumeMock = models.Resume{
 				},
 				{
 					Name: "Database",
-					Skills: []models.Skill{
+					Skills: []Skill{
 						{
 							Name:           "T-SQL",
 							AdditionalInfo: "MS SQL",
@@ -87,10 +85,10 @@ var ResumeMock = models.Resume{
 		},
 		{
 			Name: "Databases",
-			SubGroups: []models.SkillGroup{
+			SubGroups: []SkillGroup{
 				{
 					Name: "SQL",
-					Skills: []models.Skill{
+					Skills: []Skill{
 						{
 							Name: "MS SQL",
 						},
@@ -107,7 +105,7 @@ var ResumeMock = models.Resume{
 				},
 				{
 					Name: "NoSQL",
-					Skills: []models.Skill{
+					Skills: []Skill{
 						{
 							Name: "MongoDB",
 						},
@@ -129,7 +127,7 @@ var ResumeMock = models.Resume{
 		},
 		{
 			Name: "Container Services",
-			Skills: []models.Skill{
+			Skills: []Skill{
 				{
 					Name: "Docker",
 				},
@@ -143,7 +141,7 @@ var ResumeMock = models.Resume{
 		},
 		{
 			Name: "CI/CD",
-			Skills: []models.Skill{
+			Skills: []Skill{
 				{
 					Name: "Azure DevOps",
 				},
@@ -166,7 +164,7 @@ var ResumeMock = models.Resume{
 		},
 		{
 			Name: "Bug Tracking",
-			Skills: []models.Skill{
+			Skills: []Skill{
 				{
 					Name: "JIRA",
 				},
@@ -177,7 +175,7 @@ var ResumeMock = models.Resume{
 		},
 		{
 			Name: "Source Control",
-			Skills: []models.Skill{
+			Skills: []Skill{
 				{
 					Name: "GIT",
 				},
@@ -188,7 +186,7 @@ var ResumeMock = models.Resume{
 		},
 		{
 			Name: "OS",
-			Skills: []models.Skill{
+			Skills: []Skill{
 				{
 					Name: "Windows",
 				},
@@ -205,7 +203,7 @@ var ResumeMock = models.Resume{
 		},
 		{
 			Name: "Clouds",
-			Skills: []models.Skill{
+			Skills: []Skill{
 				{
 					Name: "Azure",
 				},
@@ -216,13 +214,13 @@ var ResumeMock = models.Resume{
 					Name: "AWS",
 				},
 			},
-			SubGroups: []models.SkillGroup{
+			SubGroups: []SkillGroup{
 				{
 					Name: "Compute",
-					SubGroups: []models.SkillGroup{
+					SubGroups: []SkillGroup{
 						{
 							Name: "IaaS",
-							Skills: []models.Skill{
+							Skills: []Skill{
 								{
 									Name: "Azure VM",
 								},
@@ -242,7 +240,7 @@ var ResumeMock = models.Resume{
 						},
 						{
 							Name: "PaaS",
-							Skills: []models.Skill{
+							Skills: []Skill{
 								{
 									Name: "Azure App Service",
 								},
@@ -265,7 +263,7 @@ var ResumeMock = models.Resume{
 						},
 						{
 							Name: "Serverless",
-							Skills: []models.Skill{
+							Skills: []Skill{
 								{
 									Name: "Azure Functions",
 								},
@@ -293,10 +291,10 @@ var ResumeMock = models.Resume{
 				},
 				{
 					Name: "Storage",
-					SubGroups: []models.SkillGroup{
+					SubGroups: []SkillGroup{
 						{
 							Name: "RDS",
-							Skills: []models.Skill{
+							Skills: []Skill{
 								{
 									Name: "Azure SQL",
 								},
@@ -310,7 +308,7 @@ var ResumeMock = models.Resume{
 						},
 						{
 							Name: "NoSQL",
-							Skills: []models.Skill{
+							Skills: []Skill{
 								{
 									Name: "Azure CosmosDB",
 								},
@@ -327,7 +325,7 @@ var ResumeMock = models.Resume{
 						},
 						{
 							Name: "Object",
-							Skills: []models.Skill{
+							Skills: []Skill{
 								{
 									Name: "Azure Blob Storage",
 								},
@@ -341,7 +339,7 @@ var ResumeMock = models.Resume{
 						},
 						{
 							Name: "File",
-							Skills: []models.Skill{
+							Skills: []Skill{
 								{
 									Name: "Azure File Storage",
 								},
@@ -355,7 +353,7 @@ var ResumeMock = models.Resume{
 						},
 						{
 							Name: "Archive",
-							Skills: []models.Skill{
+							Skills: []Skill{
 								{
 									Name: "Azure Archive Storage",
 								},
@@ -371,7 +369,7 @@ var ResumeMock = models.Resume{
 				},
 				{
 					Name: "Messaging",
-					Skills: []models.Skill{
+					Skills: []Skill{
 						{
 							Name: "Azure Service Bus",
 						},
@@ -394,7 +392,7 @@ var ResumeMock = models.Resume{
 				},
 				{
 					Name: "Secret Management",
-					Skills: []models.Skill{
+					Skills: []Skill{
 						{
 							Name: "Azure KeyVault",
 						},
@@ -414,7 +412,7 @@ var ResumeMock = models.Resume{
 				},
 				{
 					Name: "Monitoring and Logging",
-					Skills: []models.Skill{
+					Skills: []Skill{
 						{
 							Name: "Azure Monitor",
 						},
@@ -431,10 +429,10 @@ var ResumeMock = models.Resume{
 				},
 				{
 					Name: "Networking",
-					SubGroups: []models.SkillGroup{
+					SubGroups: []SkillGroup{
 						{
 							Name: "Virtual Network",
-							Skills: []models.Skill{
+							Skills: []Skill{
 								{
 									Name: "Azure VNET",
 								},
@@ -448,7 +446,7 @@ var ResumeMock = models.Resume{
 						},
 						{
 							Name: "Load Balancing",
-							Skills: []models.Skill{
+							Skills: []Skill{
 								{
 									Name: "Azure Load Balancer",
 								},
@@ -465,7 +463,7 @@ var ResumeMock = models.Resume{
 						},
 						{
 							Name: "Firewall",
-							Skills: []models.Skill{
+							Skills: []Skill{
 								{
 									Name: "Azure WAF",
 								},
@@ -479,7 +477,7 @@ var ResumeMock = models.Resume{
 						},
 						{
 							Name: "DNS",
-							Skills: []models.Skill{
+							Skills: []Skill{
 								{
 									Name: "Azure DNS",
 								},
@@ -493,7 +491,7 @@ var ResumeMock = models.Resume{
 						},
 						{
 							Name: "CDN",
-							Skills: []models.Skill{
+							Skills: []Skill{
 								{
 									Name: "Azure CDN",
 								},
@@ -507,7 +505,7 @@ var ResumeMock = models.Resume{
 						},
 						{
 							Name: "Gateways",
-							Skills: []models.Skill{
+							Skills: []Skill{
 								{
 									Name: "Azure API Gateway",
 								},
@@ -529,7 +527,7 @@ var ResumeMock = models.Resume{
 				},
 				{
 					Name: "DevOps",
-					Skills: []models.Skill{
+					Skills: []Skill{
 						{
 							Name:           "Azure DevOps",
 							AdditionalInfo: "Boards, Pipelines, Repos, TestPlans, Artifacts",
@@ -547,10 +545,215 @@ var ResumeMock = models.Resume{
 			},
 		},
 	},
-	Experience: []models.Experience{},
-	Certifications: []models.Certification{
+	Experience: []Experience{
 		{
-			ID:              0,
+			Title:     "Lead Software Engineer",
+			Company:   "EPAM Systems",
+			StartDate: time.Date(2019, time.May, 1, 0, 0, 0, 0, time.UTC),
+			Projects: []Project{
+				{
+					Client:    "Broadridge",
+					StartDate: time.Date(2021, time.November, 1, 0, 0, 0, 0, time.UTC),
+					Roles: []string{
+						"Key Developer",
+						"Team Lead",
+					},
+					Envirnment: []string{
+						".NET Core 6.0",
+						"Vue.js",
+						"Python 3.7",
+						"AWS",
+						"AWS Lambda",
+						"AWS S3",
+						"AWS Beanstalk",
+						"AWS EC2",
+						"AWS Code Commit",
+						"AWS Code Build",
+						"AWS Code Deploy",
+						"AWS Code Pipeline",
+						"Docker",
+						"AWS RDS",
+						"GIT",
+					},
+				},
+				{
+					Client:    "ElipsLife",
+					StartDate: time.Date(2019, time.May, 1, 0, 0, 0, 0, time.UTC),
+					EndDate:   time.Date(2021, time.November, 1, 0, 0, 0, 0, time.UTC),
+					Roles: []string{
+						"Key Developer",
+						"Team Lead",
+					},
+					Envirnment: []string{
+						".NET Core 6.0",
+						"Angular 13",
+						"Go Lang",
+						"Azure",
+						"Azure DevOps",
+						"Octopus",
+						"OKTA",
+						"Docker",
+						"Cosmos DB",
+						"Redis",
+						"MS SQL",
+						"GIT",
+					},
+					TaskPerformed: []string{
+						"Designed microservice-based hybrid-cloud solution architecture for multi-role self-service portal for managing insurance claims, underwriting, and broker reports.",
+						"Designed and developed microservices following a RESTful approach and applying best practices. • Covered code with unit and contract tests and maintained code coverage on 80%.",
+						"Configured CI/CD pipelines and established automated quality gates on different stages.",
+						"Mentored new joiners and supported them during the ramp-up period.",
+						"Performed systematic knowledge transfer to the client support team, including the creation of visual documentation. • Introduced and ensured the development team follows the very best engineering practices (with respect to various limitations on the client side).",
+					},
+				},
+			},
+		},
+		{
+			Title:     "Front Office Risk System Developer (AVP) (Senior Software Engineer)",
+			Company:   "Credit Suisse",
+			StartDate: time.Date(2015, time.September, 1, 0, 0, 0, 0, time.UTC),
+			EndDate:   time.Date(2019, time.April, 1, 0, 0, 0, 0, time.UTC),
+			Projects: []Project{
+				{
+					Roles: []string{
+						"Key Developer",
+						"Tech Lead",
+					},
+					Envirnment: []string{
+						".NET Core 2.1",
+						".NET 4.6",
+						"WPF",
+						"WCF",
+						"EF",
+						"MS SQL",
+						"MS SSAS",
+						"TeamCity",
+						"Jira",
+						"Confluence",
+						"Splunk",
+						"GIT",
+					},
+					TaskPerformed: []string{
+						"Maintained Risk Management System for Credit Suisse Front Office and developed new modules. • Improved performance and decreased memory usage in CS in-house distributed cache.",
+						"Splatted monolith server-side architecture to microservices.",
+						"Analyzed and arranged requirements with traders, BAU team and QA.",
+						"Supported worldwide users as a part of the SL3 team. • Administrated CI/CD on TeamCity.",
+						"Documented design decisions and usage examples.",
+						"Mentored new joiners.",
+					},
+				},
+			},
+		},
+		{
+			Title:     "Senior Software Engineer",
+			Company:   "SINTEGRO SOFT",
+			StartDate: time.Date(2014, time.September, 1, 0, 0, 0, 0, time.UTC),
+			EndDate:   time.Date(2015, time.September, 1, 0, 0, 0, 0, time.UTC),
+			Projects: []Project{
+				{
+					Client: "Yandex",
+					Roles: []string{
+						"Key Developer",
+					},
+					Envirnment: []string{
+						".NET 4.5",
+						"ASP.NET MVC 5",
+						"ASP.NET Web API",
+						"WPF",
+						"MS SQL",
+						"EF",
+						"TFS",
+						"WIX",
+						"GIT",
+					},
+					TaskPerformed: []string{
+						"Participated in the development of the system that helps organize corporate bonuses, such as meals, mobile phones, fitness, transportation, etc.",
+						"Developed user personal page that contains account balance and transaction history. ",
+						"Developed desktop administration systems for corporate bonus managers.",
+						"Documented design decisions, component APIs and usage examples.",
+						"Participated in the software integration process.",
+					},
+				},
+			},
+		},
+		{
+			Title:     "Software Engineer",
+			Company:   "Gollard",
+			StartDate: time.Date(2013, time.July, 1, 0, 0, 0, 0, time.UTC),
+			EndDate:   time.Date(2014, time.August, 1, 0, 0, 0, 0, time.UTC),
+			Projects: []Project{
+				{
+					Roles: []string{
+						"Key Developer",
+					},
+					Envirnment: []string{
+						".NET 4.5",
+						"WPF",
+						"WCF",
+						"ASP.NET Web API",
+						"Esri ArcGIS",
+						"MS SQL",
+						"MySQL",
+						"GitLab",
+						"WIX",
+						"GIT",
+					},
+					TaskPerformed: []string{
+						"Participated in the development of desktop GIS application for the power distribution company dealing with electrical grids, stations and facilities on the map.",
+						"Implemented a feature that allows monitoring the service transport on the map in real-time",
+						"Introduced the possibility to view video streams from the cameras marked on the map.",
+						"Participated in the development of the solution to maintain security and safety of the buildings and areas using cameras and different types of sensors.",
+						"Implemented an alerting system that works based on the biometric data from the cameras or events from the sensors.",
+					},
+				},
+			},
+		},
+		{
+			Title:     "Software Engineer",
+			Company:   "SGC",
+			StartDate: time.Date(2012, time.August, 1, 0, 0, 0, 0, time.UTC),
+			EndDate:   time.Date(2013, time.July, 1, 0, 0, 0, 0, time.UTC),
+			Projects: []Project{
+				{
+					Roles: []string{
+						"Key Developer",
+					},
+					Envirnment: []string{
+						".NET 4.0", "WPF", "SOAP", "MS SQL", "WIX", "SVN",
+					},
+					TaskPerformed: []string{
+						"Developed software for composing estimates to determine the cost of construction.",
+						"Integrated with other well-known systems available on the market for composing estimates.",
+					},
+				},
+			},
+		},
+		{
+			Title:     "Software Engineer",
+			Company:   "Research and Production Center 'Start'",
+			StartDate: time.Date(2010, time.September, 1, 0, 0, 0, 0, time.UTC),
+			EndDate:   time.Date(2012, time.July, 1, 0, 0, 0, 0, time.UTC),
+			Projects: []Project{
+				{
+					Roles: []string{
+						"Key Developer",
+					},
+					Envirnment: []string{
+						".NET 3.5",
+						"WinForms",
+						"SOAP",
+						"MS SQL",
+						"SVN",
+					},
+					TaskPerformed: []string{
+						"Developed software for designing micro boards and creating a mask for interacting with third-party equipment for printing this kind of product.",
+					},
+				},
+			},
+		},
+	},
+	Certifications: []Certification{
+		{
 			Name:            "Azure Solutions Architect Expert",
 			Issuer:          "Microsoft",
 			IssueDate:       time.Date(2020, time.June, 10, 0, 0, 0, 0, time.UTC),
@@ -558,7 +761,6 @@ var ResumeMock = models.Resume{
 			VerificationURL: "https://www.credly.com/badges/42f9be70-0b40-4bb0-8256-bd9d573e36af/public_url",
 		},
 		{
-			ID:              1,
 			Name:            "Professional Cloud Architect",
 			Issuer:          "Google",
 			IssueDate:       time.Date(2020, time.October, 27, 0, 0, 0, 0, time.UTC),
@@ -566,7 +768,6 @@ var ResumeMock = models.Resume{
 			VerificationURL: "https://www.credential.net/786961ad-0225-4bb0-883a-3c2feceb5174",
 		},
 		{
-			ID:              2,
 			Name:            "AWS Certified Solutions Architect Associate",
 			Issuer:          "Amazon",
 			IssueDate:       time.Date(2021, time.April, 28, 0, 0, 0, 0, time.UTC),
@@ -574,7 +775,6 @@ var ResumeMock = models.Resume{
 			VerificationURL: "https://www.credly.com/badges/dc95ff2a-12d8-4816-91b2-a9292ae5df85/public_url",
 		},
 		{
-			ID:              3,
 			Name:            "DevOps Engineer Expert",
 			Issuer:          "Microsoft",
 			IssueDate:       time.Date(2020, time.December, 10, 0, 0, 0, 0, time.UTC),
@@ -582,9 +782,8 @@ var ResumeMock = models.Resume{
 			VerificationURL: "https://www.credly.com/badges/2d29613e-7c7e-481d-aba3-842b409fecd7/public_url",
 		},
 	},
-	Education: []models.Education{
+	Education: []Education{
 		{
-			ID:           0,
 			Name:         "Penza State University",
 			Degree:       "Bachelor's degree",
 			FieldOfStudy: "Design and technology of radio electronic devices",
