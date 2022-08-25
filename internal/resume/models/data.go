@@ -2,9 +2,12 @@ package models
 
 import (
 	"time"
+
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 var ResumeMock = Resume{
+	ID:        primitive.NewObjectID(),
 	FirstName: "Mikhail",
 	LastName:  "Krasilnikov",
 	Title:     "Lead Software Engineer",

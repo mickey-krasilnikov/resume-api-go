@@ -9,6 +9,7 @@ import (
 
 	"github.com/mickey-krasilnikov/resume-api-go/internal/resume/models"
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -54,14 +55,17 @@ func connect() *mongo.Client {
 
 	clientOptions := options.Client().ApplyURI(mongoDBConnectionString).SetDirect(true)
 	c, err := mongo.NewClient(clientOptions)
+	if err != nil {
+		log.Printf("unable to create client %v", err)
+	}
 	err = c.Connect(ctx)
 
 	if err != nil {
-		log.Fatalf("unable to initialize connection %v", err)
+		log.Printf("unable to initialize connection %v", err)
 	}
 	err = c.Ping(ctx, nil)
 	if err != nil {
-		log.Fatalf("unable to connect %v", err)
+		log.Printf("unable to connect %v", err)
 	}
 	return c
 }
@@ -75,14 +79,14 @@ func (repo *MongoResumeRepository) CreateResume(resume models.Resume) error {
 	resumeCollection := c.Database(database).Collection(collection)
 	r, err := resumeCollection.InsertOne(ctx, resume)
 	if err != nil {
-		log.Fatalf("failed to add resume %v", err)
+		log.Printf("failed to add resume %v", err)
 	}
 	fmt.Println("added resume", r.InsertedID)
 	return err
 }
 
 // lists resumes
-func (repo *MongoResumeRepository) ListResumes() ([]models.Resume, error) {
+func (repo *MongoResumeRepository) GetAllResumes() ([]models.Resume, error) {
 	c := connect()
 	ctx := context.Background()
 	defer c.Disconnect(ctx)
@@ -90,13 +94,79 @@ func (repo *MongoResumeRepository) ListResumes() ([]models.Resume, error) {
 	resumeCollection := c.Database(database).Collection(collection)
 	rs, err := resumeCollection.Find(ctx, bson.D{})
 	if err != nil {
-		log.Fatalf("failed to list resume(s) %v", err)
+		log.Printf("failed to list resume(s) %v", err)
 	}
 	var resumes []models.Resume
 	err = rs.All(ctx, &resumes)
 	if err != nil {
-		log.Fatalf("failed to list resume(s) %v", err)
+		log.Printf("failed to list resume(s) %v", err)
 	}
 
 	return resumes, err
+}
+
+// get resume by id
+func (repo *MongoResumeRepository) GetResumeById(resumeid string) (models.Resume, error) {
+	c := connect()
+	ctx := context.Background()
+	defer c.Disconnect(ctx)
+
+	resumeCollection := c.Database(database).Collection(collection)
+	oid, err := primitive.ObjectIDFromHex(resumeid)
+	if err != nil {
+		log.Printf("failed to update resume %v", err)
+		return models.Resume{}, err
+	}
+	rs := resumeCollection.FindOne(ctx, bson.D{{Key: "_id", Value: oid}})
+
+	var resume models.Resume
+	err = rs.Decode(&resume)
+	if err != nil {
+		log.Printf("failed to list resume(s) %v", err)
+		return models.Resume{}, err
+	}
+
+	return resume, nil
+}
+
+// updates resume
+func (repo *MongoResumeRepository) UpdateResume(resumeid string, newResume models.Resume) error {
+	c := connect()
+	ctx := context.Background()
+	defer c.Disconnect(ctx)
+
+	resumeCollection := c.Database(database).Collection(collection)
+	oid, err := primitive.ObjectIDFromHex(resumeid)
+	if err != nil {
+		log.Printf("failed to update resume %v", err)
+		return err
+	}
+	filter := bson.D{{Key: "_id", Value: oid}}
+	_, err = resumeCollection.ReplaceOne(ctx, filter, newResume)
+	if err != nil {
+		log.Printf("failed to update resume %v", err)
+		return err
+	}
+	return nil
+}
+
+// deletes a resume
+func (repo *MongoResumeRepository) DeleteResume(resumeid string) error {
+	c := connect()
+	ctx := context.Background()
+	defer c.Disconnect(ctx)
+
+	resumeCollection := c.Database(database).Collection(collection)
+	oid, err := primitive.ObjectIDFromHex(resumeid)
+	if err != nil {
+		log.Printf("invalid resume ID %v", err)
+		return err
+	}
+	filter := bson.D{{Key: "_id", Value: oid}}
+	_, err = resumeCollection.DeleteOne(ctx, filter)
+	if err != nil {
+		log.Printf("failed to delete resume %v", err)
+		return err
+	}
+	return nil
 }

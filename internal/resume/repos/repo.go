@@ -1,7 +1,6 @@
 package repos
 
 import (
-	"errors"
 	"fmt"
 
 	"github.com/mickey-krasilnikov/resume-api-go/internal/resume/models"
@@ -11,8 +10,11 @@ import (
 )
 
 type ResumeRepo interface {
+	GetAllResumes() ([]models.Resume, error)
+	GetResumeById(resumeid string) (models.Resume, error)
 	CreateResume(resume models.Resume) error
-	ListResumes() ([]models.Resume, error)
+	DeleteResume(resumeid string) error
+	UpdateResume(resumeid string, newResume models.Resume) error
 }
 
 type RepoType string
@@ -35,7 +37,7 @@ func GetRepo(t RepoType) (ResumeRepo, error) {
 		repo = mongorepo.New()
 	default:
 		repo = nil
-		err = errors.New(fmt.Sprintf("%s repository type is not supported", t))
+		err = fmt.Errorf("%s repository type is not supported", t)
 	}
 	return repo, err
 }
